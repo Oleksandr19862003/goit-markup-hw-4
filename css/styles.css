@@ -6,6 +6,7 @@
 	--font-weight-bold: 700;
 	--font-weight-regular: 500;
 	--font-size-main: 16px;
+	--secondary-white: #f5f4fa;
 }
 
 ul,
@@ -46,6 +47,7 @@ body {
 
 .flex {
 	display: flex;
+	align-items: baseline;
 }
 
 a {
@@ -87,8 +89,6 @@ ul {
 /* .nav-list-item, */
 .contacts-item {
 	padding: 32px 0;
-
-
 }
 
 .contacts-list-top {
@@ -136,20 +136,21 @@ ul {
 	fill: var(--main-blue);
 }
 
-
 /* Герой */
 .hero {
-	text-align: center;	
+	text-align: center;
 	padding: 200px 0;
-	background:  #2F303A;
-	background-image: 
-	linear-gradient(
-		to left,
-		rgba(47, 48, 58, 0.4),
-		rgba(47, 48, 58, 0.4)),
-		url(/images/hero-image.png);	
+	background: #2f303a;
+	background-image: linear-gradient(
+			to right,
+			rgba(47, 48, 58, 0.4),
+			rgba(47, 48, 58, 0.4)
+		),
+		url(../images/hero-image.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
+	max-width: 1600px;
+	margin: 0 auto;
 }
 
 .hero-headline {
@@ -184,7 +185,7 @@ ul {
 .hero-btn:hover,
 .hero-btn:focus {
 	color: var(--main-black);
-	background: #f5f4fa;
+	background: var(--secondary-white);
 	cursor: pointer;
 }
 
@@ -193,11 +194,10 @@ ul {
 	display: none;
 }
 
-
 .features-icon-item {
 	width: 270px;
 	height: 120px;
-	background: #F5F4FA;
+	background: var(--secondary-white);
 	border-radius: 4px;
 	justify-content: center;
 	align-items: center;
@@ -240,9 +240,11 @@ ul {
 
 .our-team {
 	text-align: center;
-	background: #f5f4fa;
+	background: var(--secondary-white);
 }
-
+.team-card {
+	background-color: var(--main-white);
+}
 .team-card:nth-child(n + 2) {
 	margin-left: 30px;
 }
@@ -253,7 +255,8 @@ ul {
 	border-top: none;
 	border-bottom-right-radius: 4px;
 	border-bottom-left-radius: 4px;
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+		0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .team-members {
@@ -275,7 +278,6 @@ ul {
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-
 }
 
 .social-link {
@@ -289,26 +291,37 @@ ul {
 
 .social-link:hover,
 .social-link:focus {
-	fill: #FFFFFF;
-	background-color: #2196f3;
+	fill: var(--main-white);
+	background-color: var(--main-blue);
 }
 
-/*  Постіні клієнти  */
-.clients-list-item:nth-child(n+2) {
+/*  Постійні клієнти  */
+.clients-list-item {
+	width: 170px;
+	height: 92px;
+}
+.clients-list-item:nth-child(n + 2) {
 	margin-left: 30px;
-
+}
+.clients-link {
+	width: 100%;
+	height: 100%;
+	fill: rgba(175, 177, 184, 1);
+	border: 1px solid rgba(175, 177, 184, 1);
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .clients-icon {
-	fill: rgba(175, 177, 184, 1);
-	border: 1px solid #AFB1B8;
-	border-radius: 4px;
+	fill: inherit;
 }
-
-.clients-icon:hover,
-.clients-icon:focus {
-	fill: #2196f3;
-	border: 1px solid #2196F3;
+.clients-link:hover,
+.clients-link:focus {
+	fill: var(--main-blue);
+	border: 1px solid var(--main-blue);
+	cursor: pointer;
 }
 
 /* Футер */
@@ -344,20 +357,22 @@ ul {
 	line-height: 1.71;
 	text-align: left;
 }
+.contacts-footer:hover,
+.contacts-footer:focus {
+	color: var(--main-blue);
+}
 
 .footer-link-headline {
 	font-size: 14px;
 	line-height: 16px;
 	text-transform: uppercase;
-	color: #FFFFFF;
+	color: var(--main-white);
 	margin-bottom: 20px;
-
 }
 
 .footer-contacts-item {
 	margin-right: 70px;
 	align-self: baseline;
-
 }
 
 .footer-links {
@@ -366,7 +381,7 @@ ul {
 
 .social-footer {
 	background: rgba(255, 255, 255, 0.1);
-	fill: #FFFFFF;
+	fill: var(--main-white);
 }
 
 /* Фільтри */
@@ -388,7 +403,7 @@ ul {
 	line-height: 26px;
 	line-height: 1.625;
 	color: var(--main-black);
-	background: #f5f4fa;
+	background: var(--secondary-white);
 	letter-spacing: 0.03em;
 	text-align: center;
 	border-radius: 4px;
@@ -399,12 +414,12 @@ ul {
 }
 
 .filters-btn:hover,
-.filters-btn:hover {
+.filters-btn:focus {
 	color: var(--main-white);
 	background: var(--main-blue);
+	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+		0px 2px 2px rgba(0, 0, 0, 0.12);
 	cursor: pointer;
-	box-sizing: border-box;
-	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Проєкти */
@@ -443,7 +458,8 @@ ul {
 .project-item:nth-child(-n + 6) {
 	margin-bottom: 30px;
 }
-.project-item:hover, 
+.project-item:hover,
 .project-item:focus {
-	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+		1px 4px 6px rgba(0, 0, 0, 0.16);
 }
